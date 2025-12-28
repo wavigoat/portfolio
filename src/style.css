@@ -5,6 +5,7 @@
   --text-color: #FAD9FE;
 }
 
+/* 1. Global Setup */
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +14,6 @@ body {
   background: linear-gradient(180deg, var(--bg-color) 0%, var(--secondary-color) 100%);
   background-attachment: fixed;
   min-height: 100vh;
-  /* Ensure content is centered but allows width expansion */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ body {
 
 #root {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px; /* Slightly wider to accommodate 3 columns comfortably */
   padding: 40px 20px;
   box-sizing: border-box;
 }
@@ -31,7 +31,7 @@ header {
   margin-bottom: 40px;
 }
 
-/* Tabs Navigation */
+/* 2. Tabs */
 .tabs {
   display: flex;
   justify-content: center;
@@ -50,58 +50,62 @@ header {
   font-weight: 600;
 }
 
-.tab-btn:hover {
-  background: rgba(137, 50, 221, 0.2);
-}
-
 .tab-btn.active {
   background: var(--primary-color);
   box-shadow: 0 0 20px rgba(137, 50, 221, 0.4);
 }
 
-/* The Grid Gallery */
-.projects {
+/* 3. The Masonry Column Layout */
+.projects.grid-layout {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 30px;
-  justify-content: center;
-  align-items: flex-start; /* Keeps cards at their own natural height */
   width: 100%;
 }
 
-/* Project Cards */
+/* Create the vertical stacks */
+.project-column {
+  flex: 1; /* Each column takes up equal width */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between cards vertically */
+}
+
+/* Coding still uses a single stack */
+.projects.list-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Remove break-inside and inline-block from previous version */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 25px;
-  
-  flex: 0 1 auto;        /* Allows the card to shrink to its content */
-  width: min-content;    /* This is the secret for the shrink-wrap effect */
-  min-width: 300px;      
-  max-width: 400px; 
-  
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  animation: cardEntrance 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
 }
 
-/* 2. Reset content padding since the card now handles it */
-.card-content {
-  padding: 15px 5px 5px 5px; /* Minimal padding just for internal spacing */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-
-/* 4. Remove the margin-bottom from media so it uses the content gap */
+/* 5. Media Content */
 .project-img {
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 600px;
   display: block;
   border-radius: 14px;
   object-fit: contain;
@@ -109,18 +113,11 @@ header {
 
 .sketchfab-embed {
   width: 100%;
-  min-width: 400px; /* Sketchfab usually needs a bit more width to look good */
   aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
   background: #000;
 }
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-color);
-}
-
 
 .sketchfab-embed iframe {
   width: 100%;
@@ -128,9 +125,198 @@ header {
   border: 0;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 400px) {
-  .projects {
-    grid-template-columns: 1fr;
+/* 6. Text Spacing */
+.card-content {
+  padding: 20px 5px 5px 5px;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 7. Animations */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 8. Responsive Adjustments */
+@media (max-width: 1000px) {
+  .projects.grid-layout {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects.grid-layout, 
+  .projects.list-layout {
+    column-count: 1;
+  }
+}
+
+/* View Management */
+.view {
+  display: none; /* Hidden by default */
+  width: 100%;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.view.active {
+  display: block; /* Show active view */
+}
+
+#intro-screen.active {
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+}
+
+/* Hero Section Styles */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: var(--primary-color);
+}
+
+.text-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.text-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Portfolio Header & Back Button */
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 0.6;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+/* Layout for the Intro Card */
+.intro-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.intro-card {
+  max-width: 850px;
+  width: 90%;
+}
+
+.intro-layout {
+  display: flex;
+  flex-direction: row; /* Desktop side-by-side */
+  align-items: center;
+  gap: 30px;
+}
+
+.intro-media {
+  flex: 1;
+}
+
+.intro-media img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+/* Mobile fix for intro */
+@media (max-width: 768px) {
+  .intro-layout {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 }
