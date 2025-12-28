@@ -1,40 +1,136 @@
 :root {
-  --primary-color: #646cff;
-  --bg-color: #242424;
-  --text-color: #ffffff;
+  --primary-color: #8932DD;
+  --secondary-color: #73238a;
+  --bg-color: #0C0932;
+  --text-color: #FAD9FE;
 }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-color);
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-color);
+  background: linear-gradient(180deg, var(--bg-color) 0%, var(--secondary-color) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* Ensure content is centered but allows width expansion */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Tabs Navigation */
+.tabs {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  gap: 15px;
+  margin-bottom: 50px;
 }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  padding: 1.5rem;
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  transition: transform 0.2s;
+  color: var(--text-color);
+  padding: 10px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  background: rgba(137, 50, 221, 0.2);
+}
+
+.tab-btn.active {
+  background: var(--primary-color);
+  box-shadow: 0 0 20px rgba(137, 50, 221, 0.4);
+}
+
+/* The Grid Gallery */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start; /* Keeps cards at their own natural height */
+  width: 100%;
+}
+
+/* Project Cards */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 25px;
+  
+  flex: 0 1 auto;        /* Allows the card to shrink to its content */
+  width: min-content;    /* This is the secret for the shrink-wrap effect */
+  min-width: 300px;      
+  max-width: 400px; 
+  
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+/* 2. Reset content padding since the card now handles it */
+.card-content {
+  padding: 15px 5px 5px 5px; /* Minimal padding just for internal spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* 4. Remove the margin-bottom from media so it uses the content gap */
+.project-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  display: block;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.sketchfab-embed {
+  width: 100%;
+  min-width: 400px; /* Sketchfab usually needs a bit more width to look good */
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background-color: #2f2f2f;
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
+
+.sketchfab-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 400px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
