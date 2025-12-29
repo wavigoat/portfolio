@@ -41,15 +41,15 @@ const projects: Project[] = [
     embedId: "84507935bf7d4f37b2727e96406e581b" 
   },
   { 
-    title: "Cyberpunk Asset", 
+    title: "Pot and Lid", 
     category: '3d', 
     description: "3D Prop modeling study", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112460960_3RQ8UFgRNrwyTSK.png" 
   },
   { 
-    title: "Animated Character Study", 
+    title: "Character Walk Cycle", 
     category: '3d', 
-    description: "3D animation/GIF experiment", 
+    description: "Commissioned Model", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90714223_07s9F0LeZntyym5.gif" 
   },
   { 
@@ -58,66 +58,78 @@ const projects: Project[] = [
     description: "Looping 3D animation", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90002584_qC4nG70GdmTBw9G.gif?1729200162" 
   },
+  { 
+    title: "Character Walk Cycle", 
+    category: '3d', 
+    description: "Model and animation for Coop-erative Work VR", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112520383_Ukfxa3iyfdIznNZ.gif" 
+  },
+  { 
+    title: "Character Walk Cycle", 
+    category: '3d', 
+    description: "Model and animation for Coop-erative Work VR", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112520367_MxPh5wHyYwGwePZ.gif" 
+  },
 
   // --- DIGITAL ART CATEGORY ---
   { 
-    title: "Digital Portrait", 
+    title: "Lighting Study", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
   },
   { 
     title: "Card Illustration", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/98011997_yN5H7i3aYFDOQR4.png" 
   },
   { 
-    title: "Finished Commission", 
+    title: "Commissioned Work", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" 
   },
   { 
     title: "Card Illustration", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" 
   },
   { 
-    title: "Digital Portrait", 
+    title: "Commissioned Work", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" 
   },
   { 
-    title: "Galactic Portrait", 
+    title: "Commissioned Animation", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://file.garden/ZaN3pZzqMBk7KeIf/gal.gif" 
   },
   { 
-    title: "Digital Portrait", 
+    title: "Background and Lighting Study", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" 
   },
   { 
-    title: "Animated Portrait", 
+    title: "Snack Study Infographic", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461479_ugJVDVXALKA3jCv.gif?1766954294" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
-    description: "Painted in Procreate", 
+    description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/79630294_aV49eWjSUXVjaBd.png" 
   }
 ];
