@@ -6,17 +6,52 @@
 }
 
 /* 1. Global Setup */
+html {
+  /* 1. This color fills the area BELOW the gradient (Pink) */
+  background-color: var(--secondary-color); 
+  
+  /* 2. The gradient starts at the top and covers the viewport */
+  background-image: linear-gradient(180deg, var(--bg-color) 0%, var(--secondary-color) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
+  min-height: 100vh;
+  /* Allow natural bounce without the white bars */
+  overscroll-behavior: auto; 
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--text-color);
-  background: linear-gradient(180deg, var(--bg-color) 0%, var(--secondary-color) 100%);
-  background-attachment: fixed;
+  
+  /* Transparent so the HTML gradient shows through */
+  background: transparent; 
+
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Ensure stars are between the background and the content */
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Above HTML background */
+  pointer-events: none;
+}
+
+#root {
+  position: relative;
+  z-index: 1; /* Above stars */
+  width: 100%;
+  max-width: 1300px;
 }
 
 #root {
@@ -156,16 +191,28 @@ header {
 }
 
 /* 8. Responsive Adjustments */
+
+/* When the screen is medium-sized (Tablets) */
 @media (max-width: 1000px) {
+  /* Hide the 3rd column and let the content overflow or 
+     ideally, we just reduce the gap */
   .projects.grid-layout {
-    column-count: 2;
+    gap: 20px;
   }
 }
 
-@media (max-width: 650px) {
-  .projects.grid-layout, 
-  .projects.list-layout {
-    column-count: 1;
+/* When the screen is small (Mobile) */
+@media (max-width: 850px) {
+  /* This is the key: Switch from side-by-side to stacked */
+  .projects.grid-layout {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  /* Make each column bucket take up the full width */
+  .project-column {
+    width: 100%;
+    flex: none; /* Stop them from trying to be 1/3 width */
   }
 }
 
@@ -267,34 +314,67 @@ header {
   }
 }
 
-/* Layout for the Intro Card */
+/* 1. Ensure the wrapper allows the card to be seen */
 .intro-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  padding: 40px 20px;
   width: 100%;
 }
 
+/* 2. Fix the Intro Card dimensions */
 .intro-card {
-  max-width: 850px;
-  width: 90%;
+  max-width: 1000px !important; /* Force it wider than project cards */
+  width: 100% !important;
+  min-width: unset !important;  /* Remove the 300px min-width from project cards */
+  padding: 50px !important;
+  display: block !important;    /* Block layout works better for the internal flex */
 }
 
+/* 3. The internal layout */
 .intro-layout {
   display: flex;
-  flex-direction: row; /* Desktop side-by-side */
+  flex-direction: row;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
 }
 
+/* 4. The Text side */
+.intro-card .card-content {
+  flex: 1; /* Takes up remaining space */
+  padding: 0;
+}
+
+/* 5. The Image side - This is likely where it disappeared */
 .intro-media {
-  flex: 1;
+  flex: 0 0 400px; /* Do not grow, do not shrink, stay 400px wide */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro-media img {
   width: 100%;
-  border-radius: 14px;
+  height: auto;
+  max-width: 400px;
+  border-radius: 20px;
+  display: block; /* Ensures no weird inline spacing */
+  object-fit: cover;
+}
+
+/* Mobile: Stack them vertically */
+@media (max-width: 850px) {
+  .intro-layout {
+    flex-direction: column-reverse;
+  }
+  .intro-media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 .back-link {
@@ -313,10 +393,106 @@ header {
   color: var(--primary-color);
 }
 
-/* Mobile fix for intro */
-@media (max-width: 768px) {
-  .intro-layout {
-    flex-direction: column-reverse;
-    text-align: center;
+/* Star Field Container */
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Stay behind all content */
+  overflow: hidden;
+  pointer-events: none; /* Don't interfere with clicks */
+}
+
+.star {
+  position: absolute;
+  background: rgb(255, 213, 176);
+  border-radius: 50%;
+  opacity: 0;
+  animation: moveUp linear infinite;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
+  10% {
+    opacity: inherit; /* Maintain the random opacity set in TS */
+  }
+  90% {
+    opacity: inherit;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(137, 50, 221, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  border: 1px solid rgba(137, 50, 221, 0.2);
+}
+
+.pulse-icon {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff88;
+  animation: pulse 2s infinite;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.tech-tags span {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.tag {
+  font-size: 0.7rem;
+  background: rgba(137, 50, 221, 0.15);
+  color: #d1adff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(137, 50, 221, 0.3);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-link {
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: inline-block;
 }

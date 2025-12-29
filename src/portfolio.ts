@@ -4,6 +4,7 @@ interface Project {
   title: string;
   category: 'coding' | '3d' | 'art';
   description: string;
+  tags?: string[];
   link?: string;
   image?: string;   // For Art
   embedId?: string; // For Sketchfab
@@ -11,94 +12,114 @@ interface Project {
 
 const projects: Project[] = [
   // Coding
-  { title: "E-commerce App", category: 'coding', description: "Built with React", link: "#" },
-  
-  // 3D Modeling (Using Sketchfab Embed IDs)
+  { 
+    title: "Coop-erative Work VR", 
+    category: 'coding', 
+    tags: ["Unity", "C#", "Blender"],
+    description: "Unity VR experience focused on user interaction, featuring custom Blender models and Agile development.", 
+    link: "https://github.com/wavigoat" 
+  },
+  { 
+    title: "IMDb Movie Finder", 
+    category: 'coding', 
+    tags: ["C++", "Data Structures", "Git"],
+    description: "C++ application using advanced data structures and sorting algorithms to filter movie databases.", 
+    link: "https://github.com/wavigoat" 
+  },
+  { 
+    title: "FlavorShare Website", 
+    category: 'coding', 
+    tags: ["TypeScript", "CSS", "Agile"],
+    description: "TypeScript prototype utilizing a backend database for recipe storage and search.", 
+    link: "https://github.com/wavigoat" 
+  },
+  // --- 3D MODELING CATEGORY ---
   { 
     title: "Captain's Quarters", 
     category: '3d', 
     description: "Low-poly room model", 
-    embedId: "84507935bf7d4f37b2727e96406e581b" // Example ID from Sketchfab URL
+    embedId: "84507935bf7d4f37b2727e96406e581b" 
   },
-  // Art (Using Image URLs)
+  { 
+    title: "Cyberpunk Asset", 
+    category: '3d', 
+    description: "3D Prop modeling study", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112460960_3RQ8UFgRNrwyTSK.png" 
+  },
+  { 
+    title: "Animated Character Study", 
+    category: '3d', 
+    description: "3D animation/GIF experiment", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90714223_07s9F0LeZntyym5.gif" 
+  },
+  { 
+    title: "Character Walk Cycle", 
+    category: '3d', 
+    description: "Looping 3D animation", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90002584_qC4nG70GdmTBw9G.gif?1729200162" 
+  },
+
+  // --- DIGITAL ART CATEGORY ---
   { 
     title: "Digital Portrait", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
   },
   { 
     title: "Card Illustration", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/98011997_yN5H7i3aYFDOQR4.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/98011997_yN5H7i3aYFDOQR4.png" 
   },
   { 
     title: "Finished Commission", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" 
   },
   { 
     title: "Card Illustration", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" // Replace with your image path
-  },
-  { 
-    title: "Digital Portrait", 
-    category: '3d', 
-    description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90714223_07s9F0LeZntyym5.gif" // Replace with your image path
-  },
-  { 
-    title: "Digital Portrait", 
-    category: '3d', 
-    description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/90002584_qC4nG70GdmTBw9G.gif?1729200162" // Replace with your image path
-  },
-  { 
-    title: "Digital Portrait", 
-    category: '3d', 
-    description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112460960_3RQ8UFgRNrwyTSK.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" 
+  },
+  { 
+    title: "Galactic Portrait", 
+    category: 'art', 
+    description: "Painted in Procreate", 
+    image: "https://file.garden/ZaN3pZzqMBk7KeIf/gal.gif" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://file.garden/ZaN3pZzqMBk7KeIf/gal.gif" // Replace with your image path
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" 
+  },
+  { 
+    title: "Animated Portrait", 
+    category: 'art', 
+    description: "Painted in Procreate", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461479_ugJVDVXALKA3jCv.gif?1766954294" 
   },
   { 
     title: "Digital Portrait", 
     category: 'art', 
     description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" // Replace with your image path
-  },
-  { 
-    title: "Digital Portrait", 
-    category: 'art', 
-    description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461479_ugJVDVXALKA3jCv.gif?1766954294" // Replace with your image path
-  },
-  { 
-    title: "Digital Portrait", 
-    category: 'art', 
-    description: "Painted in Procreate", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/79630294_aV49eWjSUXVjaBd.png" // Replace with your image path
-  },
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/79630294_aV49eWjSUXVjaBd.png" 
+  }
 ];
 
 const root = document.querySelector<HTMLDivElement>('#root')!;
@@ -129,13 +150,33 @@ function renderIntro() {
       <div class="card intro-card">
         <div class="intro-layout">
           <div class="card-content">
-            <h3>Hi!</h3>
-            <p>Creative Developer & 3D Artist specializing in interactive experiences.</p><br>
+           <div class="status-badge">
+              <span class="pulse-icon"></span> Available for Summer 2026 Internships
+            </div>
+            <h3>Hello, my name is Kaitlyn Tran</h3>
+            <p>
+              I am a <strong>Computer Science & Economics student</strong> at the University of Florida with a passion for 
+              Software Engineering and Game Development. 
+            </p>
+            <br>
+            <p>
+              By day, I engineer high-performance C++ applications and TypeScript prototypes. In my free time, 
+              I am a <strong>freelance digital artist</strong> and game developer, 
+              combining technical logic with creative 3D modeling in Unity and Blender to build immersive experiences.
+            </p><br>
+            <div class="tech-tags">
+              <span>C++</span><span>TypeScript</span><span>Unity</span><span>Blender</span>
+              <span>SFML</span><span>ARM</span><span>HTML</span><span>CSS</span><span>Python</span>
+            </div>
             <button id="view-portfolio-btn" class="tab-btn active">View Portfolio</button>
+            <button id="github-btn" class="tab-btn active">Github</button>
+            <button id="linkedin-btn" class="tab-btn active">LinkedIn</button>
+            <button id="email-btn" class="tab-btn active">Email</button>
           </div>
           <div class="intro-media">
             <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" class="project-img">
           </div>
+          
         </div>
       </div>
     </div>
@@ -143,6 +184,17 @@ function renderIntro() {
 
   document.getElementById('view-portfolio-btn')?.addEventListener('click', () => {
     renderPortfolioPage();
+  });
+  document.getElementById('github-btn')?.addEventListener('click', () => {
+    window.open('https://github.com/wavigoat', '_blank');
+  });
+
+  document.getElementById('linkedin-btn')?.addEventListener('click', () => {
+    window.open('https://linkedin.com/in/kaitlyn-tran', '_blank');
+  });
+
+  document.getElementById('email-btn')?.addEventListener('click', () => {
+    window.location.href = 'mailto:kaitlyntran465@gmail.com';
   });
 }
 
@@ -244,12 +296,21 @@ function createCardHTML(p: Project, index: number): string {
     mediaHTML = `<img src="${p.image}" alt="${p.title}" class="project-img">`;
   }
 
+  // REUSING INTRO STYLES: 'tech-tags' container and 'span' elements
+  const tagHtml = p.tags 
+    ? `<div class="tech-tags card-tags-spacing">
+        ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
+       </div>` 
+    : '';
+
   return `
     <div class="card" style="animation-delay: ${index * 0.05}s">
       ${mediaHTML}
       <div class="card-content">
         <h3>${p.title}</h3>
+        ${tagHtml} 
         <p>${p.description}</p>
+        ${p.link ? `<a href="${p.link}" target="_blank" class="tab-btn card-link">Source Code</a>` : ''}
       </div>
     </div>
   `;
@@ -265,3 +326,41 @@ buttons.forEach(btn => {
 });
 
 renderProjects('coding');
+function createStarField() {
+  const container = document.createElement('div');
+  container.id = 'star-container';
+  document.body.appendChild(container);
+
+  const starCount = 120; // Slightly more stars since they move slower
+
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    
+    const rand = Math.random();
+    const sizeValue = rand * 2 + 1; // Stars between 1px and 3px
+    
+    // SLOWER SPEEDS: Increased duration from 10-25s to 40-80s
+    // Smaller stars (rand near 0) will take 80s (very slow)
+    // Larger stars (rand near 1) will take 40s (slightly faster)
+    const durationValue = 80 - (rand * 40); 
+    const opacityValue = rand * 0.5 + 0.1;
+
+    Object.assign(star.style, {
+      width: `${sizeValue}px`,
+      height: `${sizeValue}px`,
+      left: `${Math.random() * 100}vw`,
+      opacity: opacityValue.toString(),
+      backgroundColor: 'white',
+      // Adds a small glow so they stay visible against the pink gradient
+      boxShadow: `0 0 ${sizeValue}px white`, 
+      animationDuration: `${durationValue}s`,
+      animationDelay: `${Math.random() * -80}s`
+    });
+
+    container.appendChild(star);
+  }
+}
+
+// Call this once at the end of your script
+createStarField();
