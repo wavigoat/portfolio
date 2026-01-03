@@ -11,27 +11,41 @@ interface Project {
 }
 
 const projects: Project[] = [
-  // Coding
+  // -- Coding --
   { 
     title: "Coop-erative Work VR", 
     category: 'coding', 
-    tags: ["Unity", "C#", "Blender"],
-    description: "Unity VR experience focused on user interaction, featuring custom Blender models and Agile development.", 
-    link: "https://github.com/wavigoat" 
+    tags: ["Unity", "C#", "Blender", "Agile"],
+    description: "A farming simulator VR experience where players manage a farm, care for chickens, and fish. Features a dynamic economy system allowing players to sell goods for upgrades. Developed custom 3D models and animations in Blender, managed via Agile sprints.", 
+    link: "https://github.com/wavigoat/Coop-erative-work" 
   },
   { 
-    title: "IMDb Movie Finder", 
+    title: "Webby’s Internet Adventure", 
     category: 'coding', 
-    tags: ["C++", "Data Structures", "Git"],
-    description: "C++ application using advanced data structures and sorting algorithms to filter movie databases.", 
-    link: "https://github.com/wavigoat" 
+    tags: ["Unity", "C#", "Pixel Art", "Level Design"],
+    description: "A 2D platformer built in Unity featuring original pixel art assets and fluid gameplay mechanics. Focused on player engagement through intricate level design and polished character controllers.", 
+    link: "https://github.com/wavigoat/webby-adventure" 
   },
   { 
-    title: "FlavorShare Website", 
+    title: "FlavorShare Platform", 
     category: 'coding', 
-    tags: ["TypeScript", "CSS", "Agile"],
-    description: "TypeScript prototype utilizing a backend database for recipe storage and search.", 
-    link: "https://github.com/wavigoat" 
+    tags: ["TypeScript", "React", "Node.js", "Agile"],
+    description: "A recipe-sharing prototype built with React and TypeScript. Implemented a backend database for storage and search functionality. Collaborated with a cross-functional team using Jira and Agile sprints to iterate on the UI/UX.", 
+    link: "https://github.com/wavigoat/fullstack-kitchen" 
+  },
+  { 
+    title: "IMDb Movie Analytics Engine", 
+    category: 'coding', 
+    tags: ["C++", "Data Structures", "Algorithms", "Git"],
+    description: "High-performance C++ program for parsing and filtering massive IMDb datasets. Implemented custom sorting algorithms and optimized data structures (like Hash Maps/Trees) to filter by genre, rating, and vote count.", 
+    link: "https://github.com/wavigoat/IMDb-Movie-Finder" 
+  },
+  { 
+    title: "Interactive Personal Portfolio", 
+    category: 'coding', 
+    tags: ["TypeScript", "HTML", "CSS", "Vite", "React"],
+    description: "A custom-built, responsive portfolio (this site!) featuring state-based page transitions and an interdisciplinary UI design showcasing the intersection of engineering and art.", 
+    link: "https://github.com/wavigoat/portfolio" 
   },
   // --- 3D MODELING CATEGORY ---
   { 
@@ -85,13 +99,13 @@ const projects: Project[] = [
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" 
   },
   { 
-    title: "Digital Portrait", 
+    title: "Mascot Character Design and Turnaround", 
     category: 'art', 
     description: "", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/98011997_yN5H7i3aYFDOQR4.png" 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112808351_NN1xDjtcagBqta3.png" 
   },
   { 
-    title: "Commissioned Work", 
+    title: "Commissioned Character Design and Illustration", 
     category: 'art', 
     description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" 
@@ -103,7 +117,7 @@ const projects: Project[] = [
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" 
   },
   { 
-    title: "Commissioned Work", 
+    title: "Commissioned Character Design and Illustration", 
     category: 'art', 
     description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" 
@@ -155,7 +169,6 @@ function shuffleArray<T>(array: T[]): T[] {
     .map(({ value }) => value);
 }
 
-// 1. Function to render the Intro Page
 function renderIntro() {
   root.innerHTML = `
     <div class="intro-wrapper">
@@ -165,20 +178,25 @@ function renderIntro() {
            <div class="status-badge">
               <span class="pulse-icon"></span> Available for Summer 2026 Internships
             </div>
-            <h3>Hello, my name is Kaitlyn Tran</h3>
+            <h3>Hello, my name is Kaitlyn Tran!</h3>
             <p>
-              I am a <strong>Computer Science & Economics student</strong> at the University of Florida with a passion for 
-              Software Engineering and Game Development. 
+              I am a Computer Science and Economics student at the University of Florida. As a four-time Dean’s List scholar in the Herbert Wertheim College of Engineering, I combine academic excellence with a hands-on approach to building high-performance technical systems.
             </p>
             <br>
             <p>
-              By day, I engineer high-performance C++ applications and TypeScript prototypes. In my free time, 
-              I am a <strong>freelance digital artist</strong> and game developer, 
-              combining technical logic with creative 3D modeling in Unity and Blender to build immersive experiences.
+              My technical foundation spans from low-level C++ systems and ARM assembly to high-level TypeScript prototypes, and I have experience working with data structures and time complexity. My background in Economics provides a unique quantitative lens, allowing me to approach software optimization and resource management with analytical precision.
+            </p>
+            <br>
+            <p>
+              Beyond pure code, I am a creative-first, cooperative developer. I have extensive experience collaborating in Agile environments, utilizing Jira to manage sprints and streamline workflows. Whether as a freelance digital artist or a software engineer, I bridge the gap between technical logic and visual storytelling.
+            </p>
+            <br>
+            <p>
+              I specialize in 3D modeling with Blender and interactive system design in Unity, driven by the goal of creating immersive, polished digital experiences that are as functional as they are beautiful.
             </p><br>
             <div class="tech-tags">
               <span>C++</span><span>TypeScript</span><span>Unity</span><span>Blender</span>
-              <span>SFML</span><span>ARM</span><span>HTML</span><span>CSS</span><span>Python</span>
+              <span>SFML</span><span>ARM</span><span>HTML</span><span>CSS</span><span>Python</span><span>React</span>
             </div>
             <button id="view-portfolio-btn" class="tab-btn active">View Portfolio</button>
             <button id="github-btn" class="tab-btn active">Github</button>
@@ -186,7 +204,7 @@ function renderIntro() {
             <button id="email-btn" class="tab-btn active">Email</button>
           </div>
           <div class="intro-media">
-            <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" class="project-img">
+            <img src="https://file.garden/ZaN3pZzqMBk7KeIf/IMG_7452.jpg" class="project-img">
           </div>
           
         </div>
@@ -210,7 +228,7 @@ function renderIntro() {
   });
 }
 
-// 2. Function to render the Portfolio Page Structure
+
 function renderPortfolioPage() {
   root.innerHTML = `
     <div class="portfolio-container">
@@ -234,15 +252,12 @@ function renderPortfolioPage() {
     });
   });
 
-  // Back button listener
   document.getElementById('back-to-intro')?.addEventListener('click', renderIntro);
 
-  // Initial render of first category
   const firstTab = document.querySelector<HTMLButtonElement>('.tab-btn[data-category="coding"]');
   firstTab?.click();
 }
 
-// 3. Your existing Grid Logic (Modified for the Column Stacks)
 function renderProjectGrid(category: string) {
   const container = document.getElementById('project-list')!;
   container.innerHTML = '';
@@ -261,41 +276,34 @@ function renderProjectGrid(category: string) {
   }
 }
 
-// Start the app
 renderIntro();
 
 function renderProjects(category: string) {
-  // 1. Reset container
   projectContainer.innerHTML = '';
   
   const filtered = projects.filter(p => p.category === category);
   const shuffled = shuffleArray(filtered);
 
   if (category === 'coding') {
-    // Single column list view
     projectContainer.className = 'projects list-layout';
     projectContainer.innerHTML = shuffled.map((p, i) => createCardHTML(p, i)).join('');
   } else {
-    // Grid view: Manual 3-column distribution
     projectContainer.className = 'projects grid-layout';
     
     // Initialize 3 empty strings (one for each column)
     const columns = ['', '', '']; 
     
     shuffled.forEach((p, index) => {
-      // This sends project 0 to col 0, project 1 to col 1, project 2 to col 2, project 3 to col 0...
       const colIndex = index % 3;
       columns[colIndex] += createCardHTML(p, index);
     });
 
-    // Wrap the buckets into column divs
     projectContainer.innerHTML = columns
       .map(colContent => `<div class="project-column">${colContent}</div>`)
       .join('');
   }
 }
 
-// Helper function to keep code clean
 function createCardHTML(p: Project, index: number): string {
   let mediaHTML = '';
   
@@ -308,7 +316,6 @@ function createCardHTML(p: Project, index: number): string {
     mediaHTML = `<img src="${p.image}" alt="${p.title}" class="project-img">`;
   }
 
-  // REUSING INTRO STYLES: 'tech-tags' container and 'span' elements
   const tagHtml = p.tags 
     ? `<div class="tech-tags card-tags-spacing">
         ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
@@ -350,11 +357,8 @@ function createStarField() {
     star.className = 'star';
     
     const rand = Math.random();
-    const sizeValue = rand * 2 + 1; // Stars between 1px and 3px
+    const sizeValue = rand * 2 + 1;
     
-    // SLOWER SPEEDS: Increased duration from 10-25s to 40-80s
-    // Smaller stars (rand near 0) will take 80s (very slow)
-    // Larger stars (rand near 1) will take 40s (slightly faster)
     const durationValue = 80 - (rand * 40); 
     const opacityValue = rand * 0.5 + 0.1;
 
@@ -364,7 +368,6 @@ function createStarField() {
       left: `${Math.random() * 100}vw`,
       opacity: opacityValue.toString(),
       backgroundColor: 'white',
-      // Adds a small glow so they stay visible against the pink gradient
       boxShadow: `0 0 ${sizeValue}px white`, 
       animationDuration: `${durationValue}s`,
       animationDelay: `${Math.random() * -80}s`
@@ -374,5 +377,4 @@ function createStarField() {
   }
 }
 
-// Call this once at the end of your script
 createStarField();

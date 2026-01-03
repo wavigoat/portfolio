@@ -5,18 +5,15 @@
   --text-color: #FAD9FE;
 }
 
-/* 1. Global Setup */
 html {
-  /* 1. This color fills the area BELOW the gradient (Pink) */
   background-color: var(--secondary-color); 
   
-  /* 2. The gradient starts at the top and covers the viewport */
   background-image: linear-gradient(180deg, var(--bg-color) 0%, var(--secondary-color) 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   
   min-height: 100vh;
-  /* Allow natural bounce without the white bars */
+
   overscroll-behavior: auto; 
 }
 
@@ -26,7 +23,6 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
   
-  /* Transparent so the HTML gradient shows through */
   background: transparent; 
 
   min-height: 100vh;
@@ -36,27 +32,26 @@ body {
   align-items: center;
 }
 
-/* Ensure stars are between the background and the content */
 #star-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0; /* Above HTML background */
+  z-index: 0; 
   pointer-events: none;
 }
 
 #root {
   position: relative;
-  z-index: 1; /* Above stars */
+  z-index: 1; 
   width: 100%;
   max-width: 1300px;
 }
 
 #root {
   width: 100%;
-  max-width: 1300px; /* Slightly wider to accommodate 3 columns comfortably */
+  max-width: 1300px;
   padding: 40px 20px;
   box-sizing: border-box;
 }
@@ -66,7 +61,7 @@ header {
   margin-bottom: 40px;
 }
 
-/* 2. Tabs */
+
 .tabs {
   display: flex;
   justify-content: center;
@@ -90,7 +85,6 @@ header {
   box-shadow: 0 0 20px rgba(137, 50, 221, 0.4);
 }
 
-/* 3. The Masonry Column Layout */
 .projects.grid-layout {
   display: flex;
   flex-direction: row;
@@ -101,13 +95,12 @@ header {
 
 /* Create the vertical stacks */
 .project-column {
-  flex: 1; /* Each column takes up equal width */
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Space between cards vertically */
+  gap: 30px; 
 }
 
-/* Coding still uses a single stack */
 .projects.list-layout {
   display: flex;
   flex-direction: column;
@@ -120,7 +113,6 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* Remove break-inside and inline-block from previous version */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -137,7 +129,6 @@ header {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* 5. Media Content */
 .project-img {
   width: 100%;
   height: auto;
@@ -160,7 +151,6 @@ header {
   border: 0;
 }
 
-/* 6. Text Spacing */
 .card-content {
   padding: 20px 5px 5px 5px;
 }
@@ -178,7 +168,6 @@ header {
   line-height: 1.5;
 }
 
-/* 7. Animations */
 @keyframes cardEntrance {
   from {
     opacity: 0;
@@ -190,41 +179,35 @@ header {
   }
 }
 
-/* 8. Responsive Adjustments */
-
-/* When the screen is medium-sized (Tablets) */
+/* Responsive Design */
 @media (max-width: 1000px) {
-  /* Hide the 3rd column and let the content overflow or 
-     ideally, we just reduce the gap */
   .projects.grid-layout {
     gap: 20px;
   }
 }
 
-/* When the screen is small (Mobile) */
+/* mobile */
 @media (max-width: 850px) {
-  /* This is the key: Switch from side-by-side to stacked */
   .projects.grid-layout {
     flex-direction: column; 
     align-items: center;
   }
 
-  /* Make each column bucket take up the full width */
+  
   .project-column {
     width: 100%;
-    flex: none; /* Stop them from trying to be 1/3 width */
+    flex: none;
   }
 }
 
-/* View Management */
 .view {
-  display: none; /* Hidden by default */
+  display: none;
   width: 100%;
   animation: fadeIn 0.5s ease forwards;
 }
 
 .view.active {
-  display: block; /* Show active view */
+  display: block;
 }
 
 #intro-screen.active {
@@ -233,7 +216,6 @@ header {
   align-items: center;
 }
 
-/* Hero Section Styles */
 .hero-container {
   display: flex;
   align-items: center;
@@ -306,7 +288,6 @@ header {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Hero */
 @media (max-width: 900px) {
   .hero-container {
     flex-direction: column-reverse;
@@ -314,25 +295,25 @@ header {
   }
 }
 
-/* 1. Ensure the wrapper allows the card to be seen */
 .intro-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  min-height: 100vh;      /* Use 100% of the viewport height */
   width: 100%;
+  padding: 20px;          /* Prevents card from hitting edges on mobile */
+  box-sizing: border-box;
 }
 
-/* 2. Fix the Intro Card dimensions */
+
 .intro-card {
-  max-width: 1000px !important; /* Force it wider than project cards */
+  max-width: 1000px !important; 
   width: 100% !important;
-  min-width: unset !important;  /* Remove the 300px min-width from project cards */
+  min-width: unset !important; 
   padding: 50px !important;
-  display: block !important;    /* Block layout works better for the internal flex */
+  display: block !important;  
 }
 
-/* 3. The internal layout */
 .intro-layout {
   display: flex;
   flex-direction: row;
@@ -342,15 +323,15 @@ header {
   width: 100%;
 }
 
-/* 4. The Text side */
+
 .intro-card .card-content {
-  flex: 1; /* Takes up remaining space */
+  flex: 1; 
   padding: 0;
 }
 
-/* 5. The Image side - This is likely where it disappeared */
+
 .intro-media {
-  flex: 0 0 400px; /* Do not grow, do not shrink, stay 400px wide */
+  flex: 0 0 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,11 +342,11 @@ header {
   height: auto;
   max-width: 400px;
   border-radius: 20px;
-  display: block; /* Ensures no weird inline spacing */
+  display: block; 
   object-fit: cover;
 }
 
-/* Mobile: Stack them vertically */
+/* Mobile:*/
 @media (max-width: 850px) {
   .intro-layout {
     flex-direction: column-reverse;
@@ -393,16 +374,15 @@ header {
   color: var(--primary-color);
 }
 
-/* Star Field Container */
 #star-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Stay behind all content */
+  z-index: -1;
   overflow: hidden;
-  pointer-events: none; /* Don't interfere with clicks */
+  pointer-events: none;
 }
 
 .star {
@@ -419,7 +399,7 @@ header {
     opacity: 0;
   }
   10% {
-    opacity: inherit; /* Maintain the random opacity set in TS */
+    opacity: inherit; 
   }
   90% {
     opacity: inherit;
