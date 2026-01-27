@@ -20,6 +20,13 @@ const projects: Project[] = [
     link: "https://github.com/wavigoat/Coop-erative-work" 
   },
   { 
+    title: "Horse Racing Simulator", 
+    category: 'coding', 
+    tags: ["HTML", "CSS", "JavaScript"],
+    description: "A horse racing simulator web game where players can customize stats, horses, and tracks to race against opponents, with custom artwork and CSS animations. Can be utilized as a random name picker.",
+    link: "https://github.com/wavigoat/horse-race-sim" 
+  },
+  { 
     title: "Webby’s Internet Adventure", 
     category: 'coding', 
     tags: ["Unity", "C#", "Pixel Art", "Level Design"],
@@ -91,6 +98,12 @@ const projects: Project[] = [
     category: 'art', 
     description: "", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
+  },
+  { 
+    title: "Character Design, Logo, Flyer, and Sticker Swampcon 2026 at the University of Florida", 
+    category: 'art', 
+    description: "", 
+    image: "https://file.garden/ZaN3pZzqMBk7KeIf/t3.png" 
   },
   { 
     title: "Card Illustration", 
