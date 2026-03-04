@@ -13,6 +13,13 @@ interface Project {
 const projects: Project[] = [
   // -- Coding --
   { 
+    title: "Airship Architect", 
+    category: 'coding', 
+    tags: ["Unity", "C#", "Game Jam"],
+    description: "A cozy puzzle game where players design and build airships. Worked on technical UI art, concept art, UI animations, and UI mechanics, including character designs of the protagonist as well as level seletion art. Developed in a 48-hour sprint for the DW Game Jam Spring 2026.", 
+    link: "https://github.com/EmeraldSnow29/DW-Game-Jam-Spring-2026" 
+  },
+  { 
     title: "Coop-erative Work VR", 
     category: 'coding', 
     tags: ["Unity", "C#", "Blender", "Agile"],
@@ -94,27 +101,27 @@ const projects: Project[] = [
 
   // --- DIGITAL ART CATEGORY ---
   { 
-    title: "Lighting Study", 
+    title: "Stitched Priestess", 
     category: 'art', 
-    description: "", 
+    description: "Original character design and lighting study, with a heavy focus on value", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
   },
   { 
     title: "Character Design, Logo, Flyer, and Sticker Swampcon 2026 at the University of Florida", 
     category: 'art', 
-    description: "", 
+    description: "Character design and promotional materials for Swampcon 2026", 
     image: "https://file.garden/ZaN3pZzqMBk7KeIf/t3.png" 
   },
   { 
-    title: "Card Illustration", 
+    title: "Dance, Dance, Revolution", 
     category: 'art', 
-    description: "", 
+    description: "Original character design and illustration for a music themed card project", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" 
   },
   { 
     title: "Mascot Character Design and Turnaround", 
     category: 'art', 
-    description: "", 
+    description: "For the AnimeEffects mascot contest, a character design and turnaround sheet focused on integrating the UI and brand elements into a cohesive character design", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112808351_NN1xDjtcagBqta3.png" 
   },
   { 
@@ -124,22 +131,22 @@ const projects: Project[] = [
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" 
   },
   { 
-    title: "Card Illustration", 
+    title: "Queen of Clovers", 
     category: 'art', 
-    description: "", 
+    description: "Illustration created for a card game project, in which every card in a suite is drawn by a different artist.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" 
   },
   { 
-    title: "Commissioned Character Design and Illustration", 
+    title: "Chimera-Letia", 
     category: 'art', 
-    description: "", 
+    description: "A commissioned character design and illustration, following client specifications for a character with a mix of human and animal features, with a focus on dynamic posing and lighting", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" 
   },
   { 
-    title: "Commissioned Animation", 
+    title: "Goodbye Wave", 
     category: 'art', 
-    description: "", 
-    image: "https://file.garden/ZaN3pZzqMBk7KeIf/gal.gif" 
+    description: "Simple looping animation using tweening to create a smooth waving motion.", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137260_2r0CIHSH97Ix9LJ.gif 
   },
   { 
     title: "Background and Lighting Study", 
@@ -150,14 +157,38 @@ const projects: Project[] = [
   { 
     title: "Snack Study Infographic", 
     category: 'art', 
-    description: "", 
+    description: "An infographic created to visualize the results of a snack survey, using a combination of hand-drawn elements and digital design to create an engaging and informative visual representation of the data.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461479_ugJVDVXALKA3jCv.gif?1766954294" 
   },
   { 
-    title: "Digital Portrait", 
+    title: "Office Dinner", 
     category: 'art', 
-    description: "", 
+    description: "Original character designs and illustration with a focus on scene composition and color.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/79630294_aV49eWjSUXVjaBd.png" 
+  },
+  { 
+    title: "Digital Horror", 
+    category: 'art', 
+    description: "An illustration focusing on composition, atmosphere, and color to create a sense of unease.", 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137711_nhxbZ0xMPYBSbw9.png" 
+  },
+  { 
+    title: "Two-Faced Serpents", 
+    category: 'art', 
+    description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and detailed linework.", 
+    image: "../images/HnH1.png" 
+  },
+  { 
+    title: "Trials of the Fey", 
+    category: 'art', 
+    description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and ink-like textures.", 
+    image: "../images/HnH2.png" 
+  },
+  { 
+    title: "Ledyba", 
+    category: 'art', 
+    description: "Fanart of the Pokémon Ledyba, focusing on colors, minimalism, and simplicity to create an appealing piece.", 
+    image: "../images/HnH2.png" 
   }
 ];
 
