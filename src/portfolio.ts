@@ -1,4 +1,7 @@
 import './style.css';
+import hnh1 from '../images/HnH1.png';
+import hnh2 from '../images/HnH2.png';
+import ledybaImg from '../images/ledyba.png';
 
 interface Project {
   title: string;
@@ -170,19 +173,19 @@ const projects: Project[] = [
     title: "Two-Faced Serpents", 
     category: 'art', 
     description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and detailed linework.", 
-    image: "/images/HnH1.png" 
+    image: hnh1
   },
   { 
     title: "Trials of the Fey", 
     category: 'art', 
     description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and ink-like textures.", 
-    image: "/images/HnH2.png" 
+    image: hnh2
   },
   { 
     title: "Ledyba", 
     category: 'art', 
     description: "Fanart of the Pokémon Ledyba, focusing on colors, minimalism, and simplicity to create an appealing piece.", 
-    image: "/images/ledyba.png" 
+    image: ledybaImg 
   }
 ];
 
