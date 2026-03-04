@@ -170,13 +170,13 @@ const projects: Project[] = [
     title: "Two-Faced Serpents", 
     category: 'art', 
     description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and detailed linework.", 
-    image: "images/hnh1.png"
+    image: "images/HnH1.png"
   },
   { 
     title: "Trials of the Fey", 
     category: 'art', 
     description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and ink-like textures.", 
-    image: "images/hnh2.png"
+    image: "images/HnH2.png"
   },
   { 
     title: "Ledyba", 
