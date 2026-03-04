@@ -140,7 +140,7 @@ const projects: Project[] = [
     title: "Goodbye Wave", 
     category: 'art', 
     description: "Simple looping animation using tweening to create a smooth waving motion.", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137260_2r0CIHSH97Ix9LJ.gif 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137260_2r0CIHSH97Ix9LJ.gif"
   },
   { 
     title: "Background and Lighting Study", 
