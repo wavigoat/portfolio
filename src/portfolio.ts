@@ -182,7 +182,7 @@ const projects: Project[] = [
     title: "Ledyba", 
     category: 'art', 
     description: "Fanart of the Pokémon Ledyba, focusing on colors, minimalism, and simplicity to create an appealing piece.", 
-    image: "/images/HnH2.png" 
+    image: "/images/ledyba.png" 
   }
 ];
 
