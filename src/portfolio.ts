@@ -220,7 +220,7 @@ function renderIntro() {
         <div class="intro-layout">
           <div class="card-content">
            <div class="status-badge">
-              <span class="pulse-icon"></span> Available for Summer 2026 Internships
+              <span class="pulse-icon"></span> Available for Summer 2026 Internships, currently working at Chromatic Games
             </div>
             <h3>Hello, my name is Kaitlyn Tran!</h3>
             <p>
