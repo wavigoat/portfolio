@@ -107,9 +107,9 @@ const projects: Project[] = [
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
   },
   { 
-    title: "Character Design, Logo, Flyer, and Sticker Swampcon 2026 at the University of Florida", 
+    title: "Character Design and Promotional Materials for Swampcon 2026", 
     category: 'art', 
-    description: "Character design and promotional materials for Swampcon 2026", 
+    description: "Character design and promotional materials for Swampcon 2026 at the University of Florida", 
     image: "https://file.garden/ZaN3pZzqMBk7KeIf/t3.png" 
   },
   { 
@@ -123,12 +123,6 @@ const projects: Project[] = [
     category: 'art', 
     description: "For the AnimeEffects mascot contest, a character design and turnaround sheet focused on integrating the UI and brand elements into a cohesive character design", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112808351_NN1xDjtcagBqta3.png" 
-  },
-  { 
-    title: "Commissioned Character Design and Illustration", 
-    category: 'art', 
-    description: "", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92224893_oB6Wf30cGWjRyqS.png" 
   },
   { 
     title: "Queen of Clovers", 
@@ -151,7 +145,7 @@ const projects: Project[] = [
   { 
     title: "Background and Lighting Study", 
     category: 'art', 
-    description: "", 
+    description: "A study focusing on atmosphere, background illustration, and lighting", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" 
   },
   { 
