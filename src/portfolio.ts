@@ -183,6 +183,18 @@ const projects: Project[] = [
     category: 'art', 
     description: "Fanart of the Pokémon Ledyba, focusing on colors, minimalism, and simplicity to create an appealing piece.", 
     image: "images/ledyba.png"
+  },
+  { 
+    title: "Mack Playing Card", 
+    category: 'art', 
+    description: "A playing card design featuring original character art, with a focus on composition, color, and integrating the character design with the card layout.", 
+    image: "images/mackCard.png"
+  },
+  { 
+    title: "Core Playing Card", 
+    category: 'art', 
+    description: "A playing card design featuring original character art, with a focus on composition, color, and integrating the character design with the card layout.", 
+    image: "images/coreCard.png"
   }
 ];
 
