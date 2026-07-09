@@ -1,13 +1,17 @@
 import './style.css';
 
+// Update the category type
+type Category = 'coding' | '3d' | 'art' | 'animation';
+
 interface Project {
   title: string;
-  category: 'coding' | '3d' | 'art';
-  description: string;
+  category: Category;
+  description?: string;
   tags?: string[];
   link?: string;
-  image?: string;   // For Art
-  embedId?: string; // For Sketchfab
+  image?: string;
+  embedId?: string;
+  videoUrl?: string;
 }
 
 const projects: Project[] = [
@@ -103,98 +107,138 @@ const projects: Project[] = [
   { 
     title: "Stitched Priestess", 
     category: 'art', 
-    description: "Original character design and lighting study, with a heavy focus on value", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/108588930_gB97ITZm0KdsDdW.png" 
   },
   { 
     title: "Character Design and Promotional Materials for Swampcon 2026", 
     category: 'art', 
-    description: "Character design and promotional materials for Swampcon 2026 at the University of Florida", 
     image: "https://file.garden/ZaN3pZzqMBk7KeIf/t3.png" 
   },
   { 
     title: "Dance, Dance, Revolution", 
     category: 'art', 
-    description: "Original character design and illustration for a music themed card project", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/107268651_TjO4G8kkg3HngRZ.png" 
   },
   { 
     title: "Mascot Character Design and Turnaround", 
     category: 'art', 
-    description: "For the AnimeEffects mascot contest, a character design and turnaround sheet focused on integrating the UI and brand elements into a cohesive character design", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112808351_NN1xDjtcagBqta3.png" 
   },
   { 
     title: "Queen of Clovers", 
     category: 'art', 
-    description: "Illustration created for a card game project, in which every card in a suite is drawn by a different artist.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/81070675_XRgPsOAVixcsEAl.png" 
   },
   { 
     title: "Chimera-Letia", 
     category: 'art', 
-    description: "A commissioned character design and illustration, following client specifications for a character with a mix of human and animal features, with a focus on dynamic posing and lighting", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/91805981_a5JKgU2iLDDBwi8.png" 
-  },
-  { 
-    title: "Goodbye Wave", 
-    category: 'art', 
-    description: "Simple looping animation using tweening to create a smooth waving motion.", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137260_2r0CIHSH97Ix9LJ.gif"
   },
   { 
     title: "Background and Lighting Study", 
     category: 'art', 
-    description: "A study focusing on atmosphere, background illustration, and lighting", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461414_uE5xeizWL8qxqBI.png" 
-  },
-  { 
-    title: "Snack Study Infographic", 
-    category: 'art', 
-    description: "An infographic created to visualize the results of a snack survey, using a combination of hand-drawn elements and digital design to create an engaging and informative visual representation of the data.", 
-    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/112461479_ugJVDVXALKA3jCv.gif?1766954294" 
   },
   { 
     title: "Office Dinner", 
     category: 'art', 
-    description: "Original character designs and illustration with a focus on scene composition and color.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/79630294_aV49eWjSUXVjaBd.png" 
   },
   { 
     title: "Digital Horror", 
     category: 'art', 
-    description: "An illustration focusing on composition, atmosphere, and color to create a sense of unease.", 
     image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137711_nhxbZ0xMPYBSbw9.png" 
   },
   { 
     title: "Two-Faced Serpents", 
     category: 'art', 
-    description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and detailed linework.", 
     image: "images/HnH1.png"
   },
   { 
     title: "Trials of the Fey", 
     category: 'art', 
-    description: "Commissioned artwork for Horrors and Hellscapes Monster of the Week campaign, with a focus on visually striking black and white composition and ink-like textures.", 
     image: "images/HnH2.png"
   },
   { 
     title: "Ledyba", 
     category: 'art', 
-    description: "Fanart of the Pokémon Ledyba, focusing on colors, minimalism, and simplicity to create an appealing piece.", 
     image: "images/ledyba.png"
   },
   { 
     title: "Mack Playing Card", 
     category: 'art', 
-    description: "A playing card design featuring original character art, with a focus on composition, color, and integrating the character design with the card layout.", 
     image: "images/mackCard.png"
   },
   { 
     title: "Core Playing Card", 
     category: 'art', 
-    description: "A playing card design featuring original character art, with a focus on composition, color, and integrating the character design with the card layout.", 
     image: "images/coreCard.png"
+  },
+  { 
+    title: "Black and White Sketch", 
+    category: 'art', 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/119623101_k4YUKututPlOfIQ.png"
+  },
+  { 
+    title: "Gradient Map Experimentation", 
+    category: 'art', 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/101540831_d4feLdBDb0jUouA.png"
+  },
+  { 
+    title: "Saturation Experimentation", 
+    category: 'art', 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/93116646_sMuwGUrpeO6i1nk.png"
+  },
+  { 
+    title: "Pokemon Style Study", 
+    category: 'art', 
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92030095_AUkvnBA7KTKtNX6.png"
+  },
+   // --- ANIMATION CATEGORY ---
+  { 
+    title: "Waving Animation", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/116137260_2r0CIHSH97Ix9LJ.gif"
+  },
+  { 
+    title: "Pixel Animation", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/73775616_Bzi2zmZP1l5Xfrq.gif"
+  },
+  { 
+    title: "Golden Child Animation", 
+    category: 'animation',  
+    videoUrl: "https://file.garden/ZaN3pZzqMBk7KeIf/Video%20Project%204%20(4).mp4"
+  },
+  { 
+    title: "Character Facial Rig Test", 
+    category: 'animation',  
+    videoUrl: "https://file.garden/ZaN3pZzqMBk7KeIf/KTran_2D_Project01.mov"
+  },
+  { 
+    title: "Train Girl Walk Sprite", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/96334999_3kifppExiCBbSuM.gif"
+  },
+  { 
+    title: "Idle Animation", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92852892_oS5dU6GpYwvTMyg.gif"
+  },
+  { 
+    title: "Flying Animation", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/99527197_s71vBTduzzLSLqe.gif"
+  },
+  { 
+    title: "Idle Animation", 
+    category: 'animation',  
+    image: "https://f2.toyhou.se/file/f2-toyhou-se/images/92390255_fTMkU6BqmDgq10S.gif"
+  },
+  { 
+    title: "Idle Animation", 
+    category: 'animation',  
+    image: "https://images.artfight.net/attack/vhJxeAlidh92Eu46iS81keKoLDqO0KozdAc5VlsyIwAIEJjXh2ADDnuqsBpl.gif?t=1719898964"
   }
 ];
 
@@ -205,6 +249,7 @@ root.innerHTML = `
     <button class="tab-btn active" data-category="coding">Coding</button>
     <button class="tab-btn" data-category="3d">3D Modeling</button>
     <button class="tab-btn" data-category="art">Art</button>
+    <button class="tab-btn" data-category="animation">Animation</button>
   </nav>
   <div id="project-list" class="projects"></div>
 `;
@@ -226,7 +271,7 @@ function renderIntro() {
         <div class="intro-layout">
           <div class="card-content">
            <div class="status-badge">
-              <span class="pulse-icon"></span> Available for Summer 2026 Internships, currently working at Chromatic Games
+              <span class="pulse-icon"></span> Available for Contract Work, Part Time, or Internships, Currently a Senior at the University of Florida
             </div>
             <h3>Hello, my name is Kaitlyn Tran!</h3>
             <p>
@@ -287,6 +332,7 @@ function renderPortfolioPage() {
         <button class="tab-btn" data-category="coding">Coding</button>
         <button class="tab-btn" data-category="3d">3D Modeling</button>
         <button class="tab-btn" data-category="art">Art</button>
+        <button class="tab-btn" data-category="animation">Animation</button>
       </nav>
       <div id="project-list" class="projects"></div>
     </div>
@@ -356,8 +402,13 @@ function renderProjects(category: string) {
 
 function createCardHTML(p: Project, index: number): string {
   let mediaHTML = '';
-  
-  if (p.category === '3d' && p.embedId) {
+  if (p.videoUrl) {
+    mediaHTML = `
+      <video class="project-img" autoplay loop muted playsinline>
+        <source src="${p.videoUrl}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>`;
+  } else if (p.category === '3d' && p.embedId) {
     mediaHTML = `
       <div class="sketchfab-embed">
         <iframe src="https://sketchfab.com/models/${p.embedId}/embed?autostart=0"></iframe>
@@ -371,14 +422,14 @@ function createCardHTML(p: Project, index: number): string {
         ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
        </div>` 
     : '';
-
+  const descriptionHtml = p.description ? `<p>${p.description}</p>` : '';
   return `
     <div class="card" style="animation-delay: ${index * 0.05}s">
       ${mediaHTML}
       <div class="card-content">
         <h3>${p.title}</h3>
         ${tagHtml} 
-        <p>${p.description}</p>
+        ${descriptionHtml}
         ${p.link ? `<a href="${p.link}" target="_blank" class="tab-btn card-link">Source Code</a>` : ''}
       </div>
     </div>
